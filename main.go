@@ -77,17 +77,17 @@ func StartTraining(charName, charClass string) string {
 	for cmd != "skip" {
 		fmt.Print("Введи команду: ")
 		fmt.Scanf("%s\n", &cmd)
+		switch {
+		case cmd == "attack":
 
-		if cmd == "attack" {
 			fmt.Println(Attack(charName, charClass))
-		}
-
-		if cmd == "defence" {
+		case cmd == "defence":
 			fmt.Println(Defence(charName, charClass))
-		}
+		case cmd == "special":
 
-		if cmd == "special" {
 			fmt.Println(Special(charName, charClass))
+		default:
+			fmt.Println("неизвестная команда")
 		}
 	}
 
